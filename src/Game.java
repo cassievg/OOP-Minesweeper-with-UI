@@ -50,8 +50,7 @@ class TimeCounter extends Thread {
 
                 game.frame.setTitle("Minesweeper - " + minutesString + ":" + secondsString);
             }
-        } catch (Exception ex) {
-            throw new RuntimeException();
+        } catch (Exception ignored) {
         }
     }
 
@@ -117,8 +116,7 @@ class GameAction implements MouseListener {
                     }
                 }
             }
-        } catch (Exception ex) {
-            throw new RuntimeException();
+        } catch (Exception ignored) {
         }
 
     }
@@ -199,7 +197,6 @@ public class Game {
     }
 
     public void setSettings(int row, int col, int diff) {
-        System.out.println(row);
         numRow = row;
         numCol = col;
         difficulty = diff;

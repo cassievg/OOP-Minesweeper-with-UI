@@ -94,12 +94,38 @@ class NumberCell extends Cell {
 
     public NumberCell(int width, int height, MouseListener action, int numMines) {
         super(width, height, action, String.valueOf(numMines));
+
+        if (numMines == 1) {
+            label.setForeground(Color.decode("#3734fe"));
+        }
+        else if (numMines == 2) {
+            label.setForeground(Color.decode("#10942e"));
+        }
+        else if (numMines == 3) {
+            label.setForeground(Color.decode("#fe0606"));
+        }
+        else if (numMines == 4) {
+            label.setForeground(Color.decode("#2c3c49"));
+        }
+        else if (numMines == 5) {
+            label.setForeground(Color.decode("#825d0d"));
+        }
+        else if (numMines == 6) {
+            label.setForeground(Color.decode("#149071"));
+        }
+        else if (numMines == 7) {
+            label.setForeground(Color.decode("#221c31"));
+        }
+        else if (numMines == 8) {
+            label.setForeground(Color.decode("#000000"));
+        }
+
         cellNum = numMines;
     }
 }
 
 class MineCell extends Cell {
     public MineCell(int width, int height, MouseListener action) {
-        super(width, height, action, "X");
+        super(width, height, action, "\uD83D\uDCA3");
     }
 }
