@@ -48,7 +48,7 @@ class TimeCounter extends Thread {
                     minutesString = String.valueOf(minutes);
                 }
 
-                game.frame.setTitle("Minesweeper - " + minutesString + ":" + secondsString);
+                game.frame.setTitle("Minesweeper - " + minutesString + ":" + secondsString + " - " + game.numFlags);
             }
         } catch (Exception ignored) {
         }
@@ -57,15 +57,6 @@ class TimeCounter extends Thread {
     public void start() {
         ongoing = true;
         super.start();
-    }
-
-    public void pause() {
-        ongoing = false;
-    }
-
-    public void reset() {
-        milliseconds = 0;
-        ongoing = false;
     }
 }
 
@@ -92,10 +83,12 @@ class GameAction implements MouseListener {
 
         try {
             if (e.isMetaDown()) {
-                if (!cell.isFlagged) {
+                if (game.numFlags > 0 && !cell.isFlagged) {
+                    game.numFlags--;
                     cell.flag();
                 }
-                else {
+                else if (cell.isFlagged) {
+                    game.numFlags++;
                     cell.unflag();
                 }
             }
@@ -182,6 +175,7 @@ public class Game {
     int numRow;
     int numCol;
     int difficulty;
+    int numFlags;
 
     Settings settings;
 
@@ -239,7 +233,7 @@ public class Game {
                     }
                     end = true;
                     timer.interrupt();
-                    frame.setTitle("You lose! - " + timer.minutesString + ":" + timer.secondsString);
+                    frame.setTitle("You lose! - " + timer.minutesString + ":" + timer.secondsString + " - " + numFlags);
                     break;
                 }
             }
@@ -260,7 +254,7 @@ public class Game {
         if (win) {
             end = true;
             timer.interrupt();
-            frame.setTitle("You win! - " + timer.minutesString + ":" + timer.secondsString);
+            frame.setTitle("You win! - " + timer.minutesString + ":" + timer.secondsString + " - " + numFlags);
         }
     }
 
@@ -313,6 +307,8 @@ public class Game {
             case 3 -> (int) (boardSize * 0.20);
             default -> throw new Exception("Difficulty not found");
         };
+
+        numFlags = numMines;
 
         LinkedList<int[]> mineCoordList = getMines(generatedBoard);
 

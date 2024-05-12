@@ -7,7 +7,6 @@ import java.awt.event.MouseListener;
 interface CellView {
 
     public JPanel getView();
-    public void display();
 }
 
 public class Cell implements CellView {
@@ -57,7 +56,7 @@ public class Cell implements CellView {
     public void flag() throws Exception {
         if (!isOpened && !isFlagged) {
             isFlagged = true;
-            button.setText("F");
+            button.setText("\uD83D\uDEA9");
         }
         else if (!isOpened) {
             isFlagged = false;
