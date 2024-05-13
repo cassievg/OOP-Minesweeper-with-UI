@@ -6,7 +6,7 @@ import java.awt.event.MouseListener;
 
 interface CellView {
 
-    public JPanel getView();
+    JPanel getView();
 }
 
 public class Cell implements CellView {
