@@ -48,7 +48,7 @@ class TimeCounter extends Thread {
                     minutesString = String.valueOf(minutes);
                 }
 
-                game.frame.setTitle("Minesweeper - " + minutesString + ":" + secondsString + " - " + game.numFlags);
+                game.frame.setTitle("Minesweeper - " + minutesString + ":" + secondsString + " - Flags: " + game.numFlags);
             }
         } catch (Exception ignored) {
         }
@@ -233,7 +233,7 @@ public class Game {
                     }
                     end = true;
                     timer.interrupt();
-                    frame.setTitle("You lose! - " + timer.minutesString + ":" + timer.secondsString + " - " + numFlags);
+                    frame.setTitle("You lose! - " + timer.minutesString + ":" + timer.secondsString + " - Flags: " + numFlags);
                     break;
                 }
             }
@@ -254,7 +254,7 @@ public class Game {
         if (win) {
             end = true;
             timer.interrupt();
-            frame.setTitle("You win! - " + timer.minutesString + ":" + timer.secondsString + " - " + numFlags);
+            frame.setTitle("You win! - " + timer.minutesString + ":" + timer.secondsString + " - Flags: " + numFlags);
         }
     }
 
