@@ -31,6 +31,7 @@ class TimeCounter extends Thread {
 
                 if (seconds == 60) {
                     seconds = 0;
+                    milliseconds = 0;
                     minutes += 1;
                 }
 

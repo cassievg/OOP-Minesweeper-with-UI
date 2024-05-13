@@ -75,11 +75,6 @@ public class Cell implements CellView {
             throw new Exception("Cell is not flagged");
         }
     }
-
-    public void display() {
-        panel.setVisible(true);
-        button.setVisible(true);
-    }
 }
 
 class EmptyCell extends Cell {
