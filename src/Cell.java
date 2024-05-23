@@ -6,7 +6,6 @@ import java.awt.event.MouseListener;
 
 // Interface CellView, as the name says, is used for viewing the cell.
 interface CellView {
-
     JPanel getView();
 }
 
