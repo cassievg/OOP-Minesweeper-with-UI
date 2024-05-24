@@ -20,8 +20,6 @@ public class Board {
         GridLayout boardLayout = new GridLayout(row, col, 0, 0);
         // Set the panel into the previously created layout.
         boardPanel.setLayout(boardLayout);
-        // Set the board position to x = 0 and y = 0. The size is the number of row and columns multiplied by my default button size, 20.
-        // Both the height and width are the same to ensure that all the buttons are squares.
 
         // Create the cells in the form of a two-dimensional array in the board.
         cells = new Cell[row][col];
