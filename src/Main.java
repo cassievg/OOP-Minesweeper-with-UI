@@ -6,7 +6,9 @@ import java.awt.event.MouseListener;
 
 public class Main {
     public static void main(String[] args) {
+        // Create a new game when the program runs.
         Game game = new Game();
+        // Display game setup first for the player to set the settings.
         game.setup();
     }
 }
