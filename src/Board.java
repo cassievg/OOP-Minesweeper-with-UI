@@ -56,7 +56,7 @@ public class Board {
     }
 
 
-    // This method initialises the UI.
+    // This method initialises the board UI.
     public void initUI() {
         // Using the getView method, it will reveal all the cells in the board using a "for" loop.
         for (int i = 0; i < totalRow; i++) {
