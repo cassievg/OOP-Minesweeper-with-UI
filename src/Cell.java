@@ -131,29 +131,33 @@ class NumberCell extends Cell {
         super(width, height, action, String.valueOf(numMines));
 
         // Set colours for every number.
-        if (numMines == 1) {
-            label.setForeground(Color.decode("#3734fe"));
-        }
-        else if (numMines == 2) {
-            label.setForeground(Color.decode("#10942e"));
-        }
-        else if (numMines == 3) {
-            label.setForeground(Color.decode("#fe0606"));
-        }
-        else if (numMines == 4) {
-            label.setForeground(Color.decode("#2c3c49"));
-        }
-        else if (numMines == 5) {
-            label.setForeground(Color.decode("#825d0d"));
-        }
-        else if (numMines == 6) {
-            label.setForeground(Color.decode("#149071"));
-        }
-        else if (numMines == 7) {
-            label.setForeground(Color.decode("#221c31"));
-        }
-        else if (numMines == 8) {
-            label.setForeground(Color.decode("#000000"));
+        switch (numMines) {
+            case 1:
+                label.setForeground(Color.decode("#3734fe"));
+                break;
+            case 2:
+                label.setForeground(Color.decode("#10942e"));
+                break;
+            case 3:
+                label.setForeground(Color.decode("#fe0606"));
+                break;
+            case 4:
+                label.setForeground(Color.decode("#2c3c49"));
+                break;
+            case 5:
+                label.setForeground(Color.decode("#825d0d"));
+                break;
+            case 6:
+                label.setForeground(Color.decode("#149071"));
+                break;
+            case 7:
+                label.setForeground(Color.decode("#221c31"));
+                break;
+            case 8:
+                label.setForeground(Color.decode("#000000"));
+                break;
+            default:
+                System.out.println("Invalid number of mines");
         }
 
         cellNum = numMines;
