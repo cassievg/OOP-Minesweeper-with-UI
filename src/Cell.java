@@ -91,7 +91,7 @@ public class Cell implements CellView {
         }
         // Throw an exception if the cell has already been opened.
         else {
-            throw new Exception("Cell is already opened");
+            throw new Exception("Cell cannot be flagged");
         }
     }
 
