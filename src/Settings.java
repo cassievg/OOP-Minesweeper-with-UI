@@ -76,7 +76,7 @@ public class Settings {
         // Size selector creation
         // Create the label for the size selection with displayed text "Size:".
         JLabel sizeLabel = new JLabel("Size:");
-        // Set the position of the label to x = 0 and y = 0, with width of 75 and height of 40.
+        // Set the position of the label to x = 0 and y = 50, with width of 75 and height of 40.
         sizeLabel.setBounds(0, 50, 75, 40);
         // Add the label component into the panel for the size selection.
         sizePanel.add(sizeLabel);
