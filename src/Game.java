@@ -291,7 +291,7 @@ public class Game {
     }
 
 
-    // This method is for the losing condition of the board.
+    // This method is for what will happen after game loss.
     public void lose(Board generatedBoard) throws Exception {
         // Go through every cell in the board, accessed by position.
         for (int row = 0; row < generatedBoard.totalRow; row++) {
