@@ -300,6 +300,9 @@ public class Settings {
         settingsFrame.setResizable(false);
         // Set the visibility of the settings frame to true to display it.
         settingsFrame.setVisible(true);
+
+        // Exit the application if the user closes the frame.
+        settingsFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
 
