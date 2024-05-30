@@ -9,7 +9,6 @@ interface CellView {
     JPanel getView();
 }
 
-
 // This class applies for all cells.
 public class Cell implements CellView {
     boolean isOpened;
